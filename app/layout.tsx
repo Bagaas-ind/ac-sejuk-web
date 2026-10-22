@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google"; // Import font
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] }); // Gunakan font Inter
 
 export const metadata: Metadata = {
   title: "AC Sejuk TITL",
@@ -12,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="id">
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

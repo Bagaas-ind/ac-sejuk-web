@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image"; // Import komponen Image Next.js
 import { 
   Wind, Droplets, Wrench, MessageCircle, ShieldCheck, 
   ArrowDown, MapPin, Phone, CalendarCheck 
@@ -36,7 +37,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-gray-900 selection:text-white">
       
-      {/* NAVBAR (Responsive Mobile) */}
+      {/* NAVBAR */}
       <nav className="fixed w-full bg-white/90 backdrop-blur-lg border-b border-gray-200 z-50">
         <div className="max-w-6xl mx-auto px-4 md:px-6 h-14 md:h-16 flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -56,10 +57,17 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO SECTION (Mobile Optimized) */}
+      {/* HERO SECTION */}
       <section className="relative min-h-[60vh] md:min-h-[85vh] flex items-center justify-center pt-14 md:pt-20">
         <div className="absolute inset-0 z-0">
-          <img src="/foto-3.jpg" alt="Teknisi AC" className="w-full h-full object-cover object-center" />
+          {/* Optimasi Hero Image: priority={true} agar dimuat paling awal */}
+          <Image 
+            src="/foto-3.jpg" 
+            alt="Teknisi AC" 
+            fill 
+            priority 
+            className="object-cover object-center" 
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/50"></div>
           <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 bg-gradient-to-t from-white to-transparent"></div>
         </div>
@@ -89,12 +97,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LAYANAN SECTION (Mobile: 2 Kolom) */}
+      {/* LAYANAN SECTION */}
       <section id="layanan" className="py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-bold tracking-tight">Layanan Kami</h2>
-            <p className="text-xs md:text-base text-gray-500 mt-2 md:mt-4 max-w-2xl mx-auto">Pilih layanan sesuai kebutuhan Anda. Tim kami siap datang dengan peralatan lengkap.</p>
+            <p className="text-xs md:text-base text-gray-500 mt-2 md:mt-4 max-w-2xl mx-auto">Pilih layanan sesuai kebutuhan Anda.</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
@@ -157,7 +165,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GALERI SECTION (Mobile: Grid 2 Kolom biar Estetik) */}
+      {/* GALERI SECTION (Optimized Images) */}
       <section id="galeri" className="py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-5xl font-bold tracking-tight text-center mb-8 md:mb-16">Dokumentasi Kerja</h2>
@@ -165,23 +173,23 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             
             <div className="relative overflow-hidden rounded-xl md:rounded-2xl aspect-[4/3] group border border-gray-200">
-              <img src="/foto-2.jpg" alt="Pengerjaan Indoor" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+              <Image src="/foto-2.jpg" alt="Indoor" fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
             </div>
 
             <div className="relative overflow-hidden rounded-xl md:rounded-2xl aspect-[4/3] group border border-gray-200">
-              <img src="/foto-4.jpg" alt="Pengerjaan Malam" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+              <Image src="/foto-4.jpg" alt="Malam" fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
             </div>
 
             <div className="relative overflow-hidden rounded-xl md:rounded-2xl aspect-[4/3] group border border-gray-200">
-              <img src="/foto-5.jpg" alt="Pengerjaan Tangga" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+              <Image src="/foto-5.jpg" alt="Tangga" fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover object-top group-hover:scale-105 transition-transform duration-500" />
             </div>
 
             <div className="relative overflow-hidden rounded-xl md:rounded-2xl aspect-[4/3] group border border-gray-200">
-              <img src="/foto-1.jpg" alt="Tim Jempol" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+              <Image src="/foto-1.jpg" alt="Tim 1" fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover object-center group-hover:scale-105 transition-transform duration-500" />
             </div>
 
             <div className="relative overflow-hidden rounded-xl md:rounded-2xl aspect-[4/3] group border border-gray-200">
-              <img src="/foto-tim.jpg" alt="Tim Panasonic" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+              <Image src="/foto-tim.jpg" alt="Tim 2" fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover object-center group-hover:scale-105 transition-transform duration-500" />
             </div>
 
             <div className="bg-gray-900 rounded-xl md:rounded-2xl p-4 md:p-6 flex flex-col justify-center items-center text-center aspect-[4/3]">
@@ -200,7 +208,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-20">
           <div className="flex-1 w-full relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-gray-200 to-gray-100 rounded-3xl transform rotate-3 scale-105"></div>
-            <img src="/foto-tim.jpg" alt="Tim Panasonic" className="relative rounded-2xl shadow-xl border border-gray-200 w-full object-cover" />
+            <Image src="/foto-tim.jpg" alt="Tim Panasonic" width={800} height={600} className="relative rounded-2xl shadow-xl border border-gray-200 w-full object-cover" />
           </div>
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-4 md:mb-6">Kelas Industri Panasonic</h2>
@@ -255,7 +263,7 @@ export default function Home() {
         </div>
         
         <div className="max-w-6xl mx-auto px-4 md:px-6 pt-6 md:pt-8 border-t border-gray-200 text-center text-[10px] md:text-sm text-gray-400">
-          <p>© 2026 SMKN 1 Kab. Tangerang.</p>
+          <p>© 2026 SMKN 1 Kab. Tangerang. </p>
         </div>
       </footer>
 
