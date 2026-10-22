@@ -258,7 +258,7 @@ export default function Home() {
         </div>
         
         <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-gray-200 text-center text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} SMKN 1 Kab. Tangerang. Dibuat untuk Tugas Sekolah.</p>
+         <p>© 2026 SMKN 1 Kab. Tangerang. Dibuat untuk Tugas Sekolah.</p>
         </div>
       </footer>
 
